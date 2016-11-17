@@ -1,0 +1,19 @@
+#!/bin/sh
+basedir=$(dirname $(realpath $0))
+exe=''
+
+command_exists() {
+    command -v "$1" >/dev/null 2>&1;
+}
+
+if command_exists node; then
+    exe='node'
+elif command_exists nodejs; then
+    exe='nodejs'
+else
+  echo 'Yarn requires Node.js 4.0 or higher to be installed.'
+  exit 2
+fi
+
+$exe "$basedir/pascal-tree.js" $@
+exit $?

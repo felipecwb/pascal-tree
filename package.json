@@ -1,0 +1,7 @@
+{
+    "name": "pascal-tree",
+    "repository": "felipecwb/pascal-tree",
+    "bin": {
+        "pascal-tree": "./bin/pascal-tree.js",
+    }
+}
